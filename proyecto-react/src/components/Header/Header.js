@@ -1,4 +1,6 @@
 import React from "react";
+import PeliculasTrending from "../PeliculasTrending/PeliculasTrending";
+import {Link} from "react-router-dom"
 
 function Header (){
     return (
@@ -20,9 +22,13 @@ function Header (){
                 <br/>
                
                 <article class="genero-titulo-div">
-                    <a class="titulo-href" href="./genres.html">GENEROS</a>
+                    <Link to="/">Home</Link>
                     <br/>
-                    <a class="titulo-href" href="./favoritos.html">FAVORITOS</a>
+                    <Link to="/Favoritos">Favoritos</Link>
+                    <br/> 
+                    <Link to="/PeliculasTrending">Trending</Link>
+                    <br/> 
+                    <Link to="/Cartelera">Cartelera Hoy</Link>
                 </article>
             </section>     
         </React.Fragment>    
