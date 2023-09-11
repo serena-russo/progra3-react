@@ -28,7 +28,7 @@ class PeliculasTrending extends Component {
             
             return(
                 <section>
-                    {this.state.peliculasTrending.slice([0,5]).map(function(todos){
+                    {this.state.peliculasTrending.map(function(todos){
                         return <Card datosPeliculasTrend={todos}/>
                     })}
                 </section>

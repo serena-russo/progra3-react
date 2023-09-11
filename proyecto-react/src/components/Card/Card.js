@@ -1,17 +1,33 @@
 import React, {Component} from "react";
-import './card.css';
+
 
 class Card extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state={
-            detalle: false,
-            favorito: false,
+            textoBoton: "Agregar a favoritos",
         }
     }
 
-    }  
+    componentDidMount(){
+    //Chequear si el id está en el array de favoritos
+
+    
 
 
+    }
 
-export default Card;
+    render (){
+        return(
+        <section className="">
+
+            <img src={this.props.datosPeliculasTrend.poster_path} alt={this.props.peliculasTrending.title} />
+            <h2>{this.props.datosPeliculasTrend.title}</h2>
+            <p>Calificación: {this.props.datosPeliculasTrend.vote_average} </p>
+            <p>Descripcion: {this.props.datosPeliculasTrend.overview}</p>
+        </section>
+        )
+
+    }  }
+
+export default Card; 
