@@ -8,7 +8,7 @@ function Header (){
 
             <section>
                
-                <img class="logo" src="./Albert-C:\Users\deds_\OneDrive\Documentos\Prog 3\Proyecto Integrador\progra3-react\proyecto-react\public\Img\Albert fachero.jpg.jpg" alt="Logo" srcset=""/>
+                <img class="logo" src="./progra3-react/proyecto-react/public/Img/Albert.jpg"/>
                 <br/>
                 <br/>
                
@@ -31,6 +31,7 @@ function Header (){
                     <Link to="/Cartelera">Cartelera Hoy</Link>
                 </article>
             </section>     
+
         </React.Fragment>    
     );
 }
