@@ -1,4 +1,4 @@
-import React, {Component} from "react"; //componente con estado
+import React, {Component} from "react"; //componente con estado PQ va a interactuar con el usuario
 
 class Main extends Component {
     constructor(props){
@@ -15,7 +15,7 @@ class Main extends Component {
         fetch(url)
         .then( response => response.json() )
             .then( data => this.setState({
-                    datos:data.data
+                    peliculas: data.data
                 })
             .catch( error => console.log(error))
             )
@@ -30,7 +30,7 @@ class Main extends Component {
             </React.Fragment>
         );
     };
-}
+
 
 export default Main;
 
