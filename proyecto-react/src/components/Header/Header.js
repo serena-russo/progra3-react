@@ -1,5 +1,4 @@
 import React from "react";
-import PeliculasTrending from "../PeliculasTrending/PeliculasTrending";
 import {Link} from "react-router-dom"
 
 function Header (){
@@ -8,7 +7,7 @@ function Header (){
 
             <section>
                
-                <img className="logo" src=".progra3-react/proyecto-react/public/Img/Albert.jpg"/>
+                <img className="logo" src="/Img/Albert.jpg"/>
                 <br/>
                 <br/>
                
