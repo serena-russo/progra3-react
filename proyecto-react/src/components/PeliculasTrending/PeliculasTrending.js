@@ -1,4 +1,5 @@
 import React, {Component} from "react"; 
+import Card from "../Card/Card"
 
 class PeliculasTrending extends Component {
     constructor(props){
@@ -14,8 +15,7 @@ class PeliculasTrending extends Component {
         
         fetch(url)
         .then( response => response.json() )
-        .then( data => 
-            this.setState({
+        .then( data => this.setState({
             peliculasTrending: data.data
             })  )
         .catch( error => console.log(error))
@@ -25,9 +25,12 @@ class PeliculasTrending extends Component {
 
     render(){
             console.log(this.state)
+            
             return(
                 <section>
-
+                    {this.state.peliculasTrending.slice([0,5]).map(function(todos){
+                        return <Card datosPeliculasTrend={todos}/>
+                    })}
                 </section>
             )
         }
