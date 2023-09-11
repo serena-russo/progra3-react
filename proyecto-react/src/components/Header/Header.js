@@ -8,7 +8,7 @@ function Header (){
 
             <section>
                
-                <img class="logo" src="./progra3-react/proyecto-react/public/Img/Albert.jpg"/>
+                <img class="logo" src=".progra3-react/proyecto-react/public/Img/Albert.jpg"/>
                 <br/>
                 <br/>
                
