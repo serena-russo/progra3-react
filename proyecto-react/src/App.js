@@ -1,6 +1,6 @@
 import Header from "./components/Header/Header"
-import Main from "./components/Main/Main"
 import Footer from "./components/Footer/Footer"
+import PeliculasTrending from "./components/PeliculasTrending/PeliculasTrending";
 
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
     
     <div>
     <Header/>
+    <PeliculasTrending/>
     
     <Footer/>
     </div>

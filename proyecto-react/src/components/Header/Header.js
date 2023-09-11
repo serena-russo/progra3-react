@@ -8,20 +8,20 @@ function Header (){
 
             <section>
                
-                <img class="logo" src=".progra3-react/proyecto-react/public/Img/Albert.jpg"/>
+                <img className="logo" src=".progra3-react/proyecto-react/public/Img/Albert.jpg"/>
                 <br/>
                 <br/>
                
-                <article class="formulario">
+                <article className="formulario">
                     <form action="./search-results.html" method="get">
-                        <input class="cuadro_buscar" type="text" name="Buscador" value="" placeholder=" Iniciar busqueda"/>
-                        <button class="buscarbotton" type="submit"> Buscar</button>
+                        <input className="cuadro_buscar" type="text" name="Buscador" value="" placeholder=" Iniciar busqueda"/>
+                        <button className="buscarbotton" type="submit"> Buscar</button>
                     </form> 
                 </article>
                 <br/>
                 <br/>
                
-                <article class="genero-titulo-div">
+                <article className="genero-titulo-div">
                     <Link to="/">Home</Link>
                     <br/>
                     <Link to="/Favoritos">Favoritos</Link>
