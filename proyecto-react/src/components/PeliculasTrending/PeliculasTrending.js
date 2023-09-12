@@ -10,9 +10,9 @@ class PeliculasTrending extends Component {
         }
     }
 
+    //Pelixulas Trending
     componentDidMount(){
         let url = 'https://api.themoviedb.org/3/movie/popular?api_key=6de7dccd8404bc4ded28289d4913aa5f'
-        
         fetch(url)
         .then( response => response.json() )
         .then( data => this.setState({
@@ -22,24 +22,35 @@ class PeliculasTrending extends Component {
            
     }
 
-   // let url2= ''
-   //falta un if ternario dentro del return
-
-    render(){
-        console.log(this.state)
-            
-            return(
-                <section>
-                    
-                    {this.state.peliculasTrending.map(function(todos){
-                        return <Card key= {todos.id} datosPeliculasTrend={todos}/>
-                    })}
-                </section>
-            )
-        }
+    //Cartelera
+    componentDidMount(){
+        let url2 = ''
+        fetch(url2)
+        .then( response => response.json() )
+        .then( data => this.setState({
+            cartelera: data.results
+            })  )
+        .catch( error => console.log(error))
+        
     }
+
+    render() {
+    console.log(this.state);
     
-
-
+    return ( //Peliculas trending
+        <section>
+            {this.state.peliculasTrending === null || this.state.peliculasTrending === "" ? (
+                <h3>Cargando...</h3>
+            ) : (
+                <div>
+                    {this.state.peliculasTrending.map((todos) => (
+                        <Card key={todos.id} datosPeliculasTrend={todos} />
+                    ))}
+                </div>
+            )}
+        </section>
+    ); 
+} // El if ternario ahi esta chequiando q peliculasTrending este nul Y vacio para desp mostrar Card
+}
+    
 export default PeliculasTrending;
-
