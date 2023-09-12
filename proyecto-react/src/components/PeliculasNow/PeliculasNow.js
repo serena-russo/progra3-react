@@ -1,21 +1,21 @@
 import React, {Component} from "react"; 
 import Card from "../Card/Card"
 
-class PeliculasTrending extends Component {
+class PeliculasNow extends Component {
     constructor(props){
         super(props);
         this.state = {
-            peliculasTrending: [],
+            PeliculasNow: [],
         }
     }
 
-    //Pelixulas Trending
+    //Peliculas Now
     componentDidMount(){
-        let url = 'https://api.themoviedb.org/3/movie/popular?api_key=6de7dccd8404bc4ded28289d4913aa5f'
+        let url = ''
         fetch(url)
         .then( response => response.json() )
         .then( data => this.setState({
-            peliculasTrending: data.results
+            PeliculasNow: data.results
             })  )
         .catch( error => console.log(error))
     }
@@ -26,12 +26,12 @@ class PeliculasTrending extends Component {
         
         return (
             <section>
-                {this.state.peliculasTrending === null || this.state.peliculasTrending === "" ? (
+                {this.state.PeliculasNow === null || this.state.PeliculasNow === "" ? (
                     <h3>Cargando...</h3>
                 ) : (
                     <div>
-                        {this.state.peliculasTrending.map((todos) => (
-                            <Card key={todos.id} datosPeliculasTrend={todos} />
+                        {this.state.PeliculasNow.map((todos) => (
+                            <Card key={todos.id} datosPeliculasNowww={todos} />
                         ))}
                     </div>
                 )}
@@ -42,4 +42,4 @@ class PeliculasTrending extends Component {
 
 
 }      
-export default PeliculasTrending;
+export default PeliculasNow;
