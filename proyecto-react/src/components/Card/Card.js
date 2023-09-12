@@ -40,7 +40,7 @@ class Card extends Component {
             })
          }
 
-        //Guardar en localstorage
+        //Guardar en localStorage
         let favoritosToString = JSON.stringify(favoritos);
         localStorage.setItem("favoritos" , favoritosToString);
 
@@ -56,7 +56,7 @@ class Card extends Component {
             <button onClick = {()=> this.agregar_sacar(this.props.datosPeliculasTrend.id)} type="button">{this.state.textoBoton}</button>
             <h2>{this.props.datosPeliculasTrend.title}</h2>
             <p> Calificación: {this.props.datosPeliculasTrend.vote_average} </p>
-            <p> Descripcion: {this.props.datosPeliculasTrend.overview} </p>
+            <p> Descripción: {this.props.datosPeliculasTrend.overview} </p>
 
         </section>
         )
