@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import "./Card.css"
 
 
 class Card extends Component {
@@ -11,6 +12,18 @@ class Card extends Component {
 
     componentDidMount(){
     //Chequear si el id está en el array de favoritos
+    let recuperoStoragePelis= localStorage.getItem("favoritos");
+    if (recuperoStoragePelis !== null){
+        let favoritos = JSON.parse(recuperoStoragePelis);
+
+        //si esta el id, necesito cambiar el texto del boton
+        if (favoritos.includes(this.props.datosPeliculasTrend.id)){
+            this.setState({
+                textoBoton: "Quitar de favoritos"
+            })
+        }
+    
+    }
     
     }
 
@@ -22,7 +35,7 @@ class Card extends Component {
             favoritos = JSON.parse(recuperoStoragePelis);
         }
 
-        if (favoritos.include(id)){
+        if (favoritos.includes(id)){
             favoritos = favoritos.filter (unId => unId !== id)
         
 
@@ -50,15 +63,15 @@ class Card extends Component {
 
     render (){
         return(
-        <section className="">
-            
-            <img src={this.props.datosPeliculasTrend.poster_path} alt="imagen" />
-            <button onClick = {()=> this.agregar_sacar(this.props.datosPeliculasTrend.id)} type="button">{this.state.textoBoton}</button>
-            <h2>{this.props.datosPeliculasTrend.title}</h2>
-            <p> Calificación: {this.props.datosPeliculasTrend.vote_average} </p>
-            <p> Descripción: {this.props.datosPeliculasTrend.overview} </p>
-
-        </section>
+            <article>
+                <div>
+                    <img className="img-js" src={`https://image.tmdb.org/t/p/w342${this.props.datosPeliculasTrend.poster_path}`} alt="imagen" />
+                </div>
+                <button onClick = {()=> this.agregar_sacar(this.props.datosPeliculasTrend.id)} type="button">{this.state.textoBoton}</button>
+                <h2 >{this.props.datosPeliculasTrend.title}</h2>
+                <p > Calificación: {this.props.datosPeliculasTrend.vote_average} </p>
+                <p > Descripción: {this.props.datosPeliculasTrend.overview} </p>
+            </article>
         )
 
     }  }

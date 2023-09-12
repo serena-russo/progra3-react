@@ -1,5 +1,6 @@
 import React, {Component} from "react"; 
 import Card from "../Card/Card"
+import "./Peliculas.css"
 
 class PeliculasTrending extends Component {
     constructor(props){
@@ -25,17 +26,18 @@ class PeliculasTrending extends Component {
         console.log(this.state);
         
         return (
-            <section>
+            <div>
+                <h1 className="titulos">Peliculas Trending</h1>
                 {this.state.peliculasTrending === null || this.state.peliculasTrending === "" ? (
                     <h3>Cargando...</h3>
                 ) : (
-                    <div>
-                        {this.state.peliculasTrending.map((todos) => (
+                    <section className="PeliculasPopulares">
+                        {this.state.peliculasTrending.slice(0,5).map((todos) => (
                             <Card key={todos.id} datosPeliculasTrend={todos} />
                         ))}
-                    </div>
+                    </section>
                 )}
-            </section>
+            </div>
         );
     } // El if ternario ahi esta chequiando q peliculasTrending este nul Y vacio, para desp mostrar Card
       // (busca q ambas condiciones se cumplan para poder ejecutar lo que viene desp)

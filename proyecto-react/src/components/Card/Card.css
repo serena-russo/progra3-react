@@ -1,5 +1,5 @@
 body{
-    background-image: url(../img/Fondopagina\ -\ copia.jpg);
+
     background-repeat: no-repeat;
     background-size: cover;
     text-shadow: 1px 3px 2px rgb(0 0 0 / 60%);
@@ -55,7 +55,7 @@ header{
  }
 /* Foooter */
 footer{
-    background-image: url(../img/fondo\ footer.jpg);
+
     background-repeat: no-repeat;
     background-size: cover;
     padding: 1px;
