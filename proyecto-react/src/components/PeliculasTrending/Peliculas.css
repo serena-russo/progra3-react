@@ -1,10 +1,9 @@
 body{
-
     background-repeat: no-repeat;
     background-size: cover;
-    text-shadow: 1px 3px 2px rgb(0 0 0 / 60%);
     font-family: 'Bebas Neue';
 }
+
 header{
     background-color: #ffffff00;
 }
@@ -19,10 +18,11 @@ header{
  }
    
  .PeliculasPopulares article{
-    color: white;
+    color: black;
     width:18%;
     text-align: center;
  }
+
 .img-js{
     width: 100%;
 }
@@ -55,17 +55,17 @@ header{
  }
 /* Foooter */
 footer{
-
     background-repeat: no-repeat;
     background-size: cover;
     padding: 1px;
     border-radius: 16px;
-    
 }
+
 .mainfooter{
     color: white;
     text-decoration: none;
 }
+
 .contacto{
     text-decoration: none;
     color: white;
@@ -73,12 +73,15 @@ footer{
     margin: 0px 10px 0px 10px;
     font-size: 20px;
 }
+
 .digital-udesa{
     display: flex;
 }
+
 .udesapic{
     width: 19%;
 }
+
 .logo-movie{
     width: 8%;
 }
@@ -89,17 +92,20 @@ footer{
     border-radius: 15px;
     padding: 6px;
 }
+
 .logo{
     display: block;
     margin: 0px auto;
     height: 10%;
     width: 10%;
 }
+
 .genero-titulo-div{
     text-align: center;
     display: flex;
     justify-content: space-around;
 }
+
 .home-css{
     text-align: right;
     font-family: 'Bebas Neue';
@@ -144,7 +150,7 @@ footer{
     color: rgb(237, 225, 225);
 }
 .titulos {
-    color: white;
+    color: black;
 }
 
 /* Style.css de detalle pelicula  */
@@ -205,11 +211,12 @@ footer{
     padding: 5px;
     font-family: "Bebas Neue";
 }
+
 .contenedorfavorito{
     display: flex;
     flex-direction: row;
-
 }
+
 .trailerboton{
     width: 7%;
     margin-top: 26px;
@@ -222,30 +229,37 @@ footer{
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
 .generosPeliculas{
     color: white;
 }
+
 .años {
     color: white;
 }
+
 .size  { height: 260px;
     width: 210px;
 }
+
 .Peliculas-populares,.Series-mas-vistas,.Peliculas-mas-vistas{
     flex-direction: row;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
+
 .article {
     position: relative;
     align-self: center;
 }
+
 .formulario {
     display: flex;
     flex-wrap: wrap;
     margin-left: 536px;
 }
+
 .cuadro_buscar{
     border: 2px solid white;
     border-radius: 20px;
@@ -253,18 +267,22 @@ footer{
     padding: 3px;
     color: white ;
 }
+
 .buscarbotton{
     border-radius: 10px;
     background-color: red;
     font-family: 'Bebas Neue';
     width: 21%;
 }
+
 .toy {
     color: white;
 }
+
 .oculta{
     display: none;
 }
+
 .futer{ 
     color: white;
     text-align: center;
@@ -274,6 +292,7 @@ footer{
 .Titulo-search{
     color: white;
 }
+
 .container{
     display: flex;
     flex-wrap: wrap;
@@ -282,6 +301,7 @@ footer{
     align-items: center;
     width: 100%;
 }
+
 .container-div{
     display: flex;
     flex-wrap: wrap;

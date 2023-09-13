@@ -4,7 +4,7 @@ import "./Footer.css"
 function Footer (){
     return (
         <section>
-            <ul className="">
+            <ul className="footer">
                 <li>Francisco St John</li>
                 <li>Juan Manuel Lopez</li>
                 <li>Serena Russo</li>
