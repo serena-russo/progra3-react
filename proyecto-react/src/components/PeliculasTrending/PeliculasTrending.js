@@ -7,16 +7,26 @@ class PeliculasTrending extends Component {
         super(props);
         this.state = {
             peliculasTrending: [],
+            peliculasNow: [],
         }
     }
 
     //Pelixulas Trending
     componentDidMount(){
         let url = 'https://api.themoviedb.org/3/movie/popular?api_key=6de7dccd8404bc4ded28289d4913aa5f'
+        let url2= 'https://api.themoviedb.org/3/movie/now_playing?api_key=6de7dccd8404bc4ded28289d4913aa5f'
+
         fetch(url)
         .then( response => response.json() )
         .then( data => this.setState({
             peliculasTrending: data.results
+            })  )
+        .catch( error => console.log(error))
+
+        fetch(url2)
+        .then( response => response.json() )
+        .then( data => this.setState({
+            peliculasNow: data.results
             })  )
         .catch( error => console.log(error))
     }
@@ -26,18 +36,32 @@ class PeliculasTrending extends Component {
         console.log(this.state);
         
         return (
-            <div>
-                <h1 className="titulos">Peliculas Trending</h1>
-                {this.state.peliculasTrending === null || this.state.peliculasTrending === "" ? (
-                    <h3>Cargando...</h3>
-                ) : (
-                    <section className="PeliculasPopulares">
-                        {this.state.peliculasTrending.slice(0,5).map((todos) => (
-                            <Card key={todos.id} datosPeliculasTrend={todos} />
-                        ))}
-                    </section>
-                )}
-            </div>
+            <React.Fragment>
+                <div>
+                    <h1 className="titulos">Peliculas Trending</h1>
+                    {this.state.peliculasTrending === null || this.state.peliculasTrending === "" ? (
+                        <h3>Cargando...</h3>
+                    ) : (
+                        <section className="PeliculasPopulares">
+                            {this.state.peliculasTrending.slice(0,5).map((todos) => (
+                                <Card key={todos.id} datosPeliculasTrend={todos} />
+                            ))}
+                        </section>
+                    )}   
+                </div>
+                <div>
+                    <h1 className="titulos">Peliculas Now Playing</h1>
+                    {this.state.peliculasNow === null || this.state.peliculasNow === "" ? (
+                        <h3>Cargando...</h3>
+                    ) : (
+                        <section className="PeliculasPopulares">
+                            {this.state.peliculasNow.slice(0,5).map((todos) => (
+                                <Card key={todos.id} datosPeliculasTrend={todos} />
+                            ))}
+                        </section>
+                    )}   
+                </div>
+            </React.Fragment>
         );
     } // El if ternario ahi esta chequiando q peliculasTrending este nul Y vacio, para desp mostrar Card
       // (busca q ambas condiciones se cumplan para poder ejecutar lo que viene desp)

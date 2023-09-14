@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import "./Card.css"
+import {Link} from "react-router-dom";
 
 
 class Card extends Component {
@@ -7,9 +8,10 @@ class Card extends Component {
         super(props);
         this.state={
             textoBoton: "Agregar a favoritos",
+            text:props.datosPeliculasTrend.overview,
+            show: false,
         }
     }
-
     componentDidMount(){
     //Chequear si el id está en el array de favoritos
     let recuperoStoragePelis= localStorage.getItem("favoritos");
@@ -26,7 +28,6 @@ class Card extends Component {
     }
     
     }
-
     agregar_sacar(id) {
         let favoritos = []
         let recuperoStoragePelis = localStorage.getItem("favoritos");
@@ -59,7 +60,11 @@ class Card extends Component {
 
         console.log(localStorage);
     }
-    
+    mostrarmas_mostrarmenos(){
+        this.setState({
+            show:!this.state.show
+        })
+    }
 
     render (){
         return(
@@ -70,7 +75,10 @@ class Card extends Component {
                 <button onClick = {()=> this.agregar_sacar(this.props.datosPeliculasTrend.id)} type="button">{this.state.textoBoton}</button>
                 <h2 >{this.props.datosPeliculasTrend.title}</h2>
                 <p > Calificación: {this.props.datosPeliculasTrend.vote_average} </p>
-                <p > Descripción: {this.props.datosPeliculasTrend.overview} </p>
+                <p > {this.state.show?this.state.text:""}</p>
+                <button onClick={()=> this.mostrarmas_mostrarmenos()}>{this.state.show?"ver menos":"ver mas"}</button>
+                <br/>
+                <Link to={"/detalle/id/${this.props.datosPeliculasTrend.id}"}><button>Ir a detalle</button></Link>
             </article>
         )
 
