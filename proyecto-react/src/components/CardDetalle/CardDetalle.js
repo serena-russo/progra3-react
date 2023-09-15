@@ -1,15 +1,11 @@
 import React, {Component} from "react";
-import "./Card.css"
-import {Link} from "react-router-dom";
 
 
-class Card extends Component {
+class CardDetalle extends Component {
     constructor(props){
         super(props);
         this.state={
             textoBoton: "Agregar a favoritos",
-            text:props.datosPeliculasTrend.overview,
-            show: false,
         }
     }
     componentDidMount(){
@@ -19,7 +15,7 @@ class Card extends Component {
         let favoritos = JSON.parse(recuperoStoragePelis);
 
         //si esta el id, necesito cambiar el texto del boton
-        if (favoritos.includes(this.props.datosPeliculasTrend.id)){
+        if (favoritos.includes(this.props.datospeli.id)){
             this.setState({
                 textoBoton: "Quitar de favoritos"
             })
@@ -62,28 +58,25 @@ class Card extends Component {
         console.log(localStorage);
         console.log(localStorage.length);
     }
-    mostrarmas_mostrarmenos(){
-        this.setState({
-            show:!this.state.show
-        })
-    }
 
     render (){
+        console.log(this.props)
         return(
             <article>
+                <h2 >{this.props.datospeli.title}</h2>
                 <div>
-                    <img className="img-js" src={`https://image.tmdb.org/t/p/w342${this.props.datosPeliculasTrend.poster_path}`} alt="imagen" />
+                    <img className="img-js" src={`https://image.tmdb.org/t/p/w342${this.props.datospeli.poster_path}`} alt="imagen" />
                 </div>
-                <button onClick = {()=> this.agregar_sacar(this.props.datosPeliculasTrend.id)} type="button">{this.state.textoBoton}</button>
-                <h2 >{this.props.datosPeliculasTrend.title}</h2>
-                <p > Calificación: {this.props.datosPeliculasTrend.vote_average} </p>
-                <p > {this.state.show?this.state.text:""}</p>
-                <button onClick={()=> this.mostrarmas_mostrarmenos()}>{this.state.show?"ver menos":"ver mas"}</button>
-                <br/>
-                <Link to={`/detalle/${this.props.datosPeliculasTrend.id}`}><button>Ir a detalle</button></Link>
+                <button onClick = {()=> this.agregar_sacar(this.props.datospeli.id)} type="button">{this.state.textoBoton}</button>
+                <p>Calificación: {this.props.datospeli.vote_average} </p>
+                <p>Fecha estreno: {this.props.datospeli.release_date}</p>
+                <p>Duracion: {this.props.datospeli.runtime}</p>
+                <p>Sinopsis: {this.props.datospeli.overview}</p>
+                <p>Generos: {this.props.generos.join(" ")}</p>
+                
             </article>
         )
 
     }  }
 
-export default Card; 
+export default CardDetalle; 

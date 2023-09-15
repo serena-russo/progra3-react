@@ -33,7 +33,7 @@ class ResultadoBuscador extends Component{
             <section className="">
                 {
                     this.state.peliculaBuscada.slice(0,12).map(
-                        (pelicula,idx) => <Card key={pelicula + idx} datosPelicula={pelicula}/>
+                        (pelicula,idx) => <Card key={pelicula + idx} datosPeliculasTrend={pelicula}/>
                     )
                 }
             </section>:

@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import "./Header.css"
+import "./Header.css";
+import Buscador from "../Buscador/Buscador";
 
 
 function Header (){
@@ -17,6 +18,7 @@ function Header (){
                     <Link to="/PeliculasTrending"> Trending </Link>
                     <br/> 
                     <Link to="/PeliculasNow"> Cartelera Hoy </Link>
+                    <Buscador/>
                 </article>
             </section>     
         </React.Fragment>    

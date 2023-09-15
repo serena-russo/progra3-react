@@ -1,20 +1,17 @@
-import React from "react";
-import Peliculas from "../../components/Peliculas/Peliculas";
+import Detalle from "../../components/Detalle/Detalle";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
-
-function Home (){
+function DetalleScreen (){
     return (
        
         <body>               
             <Header />
-            <Peliculas/>
-                 
+            <Detalle/>
             <Footer/>
 
         </body>   
     )
 }
 
-export default Home;
+export default DetalleScreen;
