@@ -31,6 +31,7 @@ class Card extends Component {
     agregar_sacar(id) {
         let favoritos = []
         let recuperoStoragePelis = localStorage.getItem("favoritos");
+    
 
         if (recuperoStoragePelis !== null){
             favoritos = JSON.parse(recuperoStoragePelis);
@@ -39,7 +40,7 @@ class Card extends Component {
         if (favoritos.includes(id)){
             favoritos = favoritos.filter (unId => unId !== id)
         
-
+        
         //Mostrarle un cambio al usuario en pantalla
         this.setState({
             textoBoton: "Agregar a favoritos"
@@ -59,6 +60,7 @@ class Card extends Component {
         localStorage.setItem("favoritos" , favoritosToString);
 
         console.log(localStorage);
+        console.log(localStorage.length);
     }
     mostrarmas_mostrarmenos(){
         this.setState({

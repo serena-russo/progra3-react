@@ -2,31 +2,40 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Bebas Neue';
+    background-image: "./Img/Albert.jpg";
 }
 
 header{
     background-color: #ffffff00;
+}
+p{
+    text-shadow: black;
+    color: black;
 }
 
 /*Index*/
 
 /* peliculas populares */
 .PeliculasPopulares{
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;   
  }
    
  .PeliculasPopulares article{
     color: black;
     width:18%;
     text-align: center;
+
  }
 
 .img-js{
     width: 100%;
 }
  
+
  /* series mas vistas*/
  .SeriesMasVistas{
     display: flex;

@@ -1,6 +1,7 @@
 import React, {Component} from "react"; 
 import Card from "../Card/Card"
 
+
 class PeliculasNow extends Component {
     constructor(props){
         super(props);
@@ -11,7 +12,7 @@ class PeliculasNow extends Component {
 
     //Peliculas Now
     componentDidMount(){
-        let url = ''
+        let url = 'https://api.themoviedb.org/3/movie/now_playing?api_key=6de7dccd8404bc4ded28289d4913aa5f'
         fetch(url)
         .then( response => response.json() )
         .then( data => this.setState({
@@ -29,9 +30,9 @@ class PeliculasNow extends Component {
                 {this.state.PeliculasNow === null || this.state.PeliculasNow === "" ? (
                     <h3>Cargando...</h3>
                 ) : (
-                    <div>
+                    <div class="PeliculasPopulares">
                         {this.state.PeliculasNow.map((todos) => (
-                            <Card key={todos.id} datosPeliculasNowww={todos} />
+                            <Card key={todos.id} datosPeliculasTrend={todos} />
                         ))}
                     </div>
                 )}

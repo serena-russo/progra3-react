@@ -12,11 +12,11 @@ function Header (){
                 <article className="genero-titulo-div">
                     <Link to="/"> Home </Link>
                     <br/>
-                    <Link to="/Favoritos"> Favoritos </Link>
+                    <Link to="/Favs"> Favoritos </Link>
                     <br/> 
                     <Link to="/PeliculasTrending"> Trending </Link>
                     <br/> 
-                    <Link to="/Cartelera"> Cartelera Hoy </Link>
+                    <Link to="/PeliculasNow"> Cartelera Hoy </Link>
                 </article>
             </section>     
         </React.Fragment>    

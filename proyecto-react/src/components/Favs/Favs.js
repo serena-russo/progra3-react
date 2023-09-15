@@ -12,7 +12,7 @@ class Favs extends Component {
 
     componentDidMount() {
         let arrayFavs = [];
-        let getStoragePelis = localStorage.getItem('arrayFavs')
+        let getStoragePelis = localStorage.getItem('favoritos')
         if (getStoragePelis !== null) {
             let toArray = JSON.parse(getStoragePelis);
             arrayFavs = toArray
@@ -29,6 +29,7 @@ class Favs extends Component {
                 })
                 .catch(error => console.log(error))
             return true
+            console.log(arrayFavs)
         })
         }
 
@@ -48,4 +49,4 @@ class Favs extends Component {
         }
     }
     
-    export default Favs
+export default Favs

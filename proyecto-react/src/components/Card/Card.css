@@ -16,7 +16,8 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
- }
+    flex-wrap: wrap;
+}
    
  .PeliculasPopulares article{
     color: white;

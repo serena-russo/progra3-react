@@ -1,15 +1,20 @@
 import React from "react";
+import Peliculas from "../../components/Peliculas/Peliculas";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
-function Cartelera (){
+
+function Home (){
     return (
-        <section>
-             <h1 class="titulos">Cartelera</h1>
-            <section class="PeliculasPopulares"></section>
+       
+        <body>               
+            <Header />
+            <Peliculas/ >
+                 
+            <Footer/>
 
-
-
-        </section>
+        </body>   
     )
 }
 
-export default Cartelera;
+export default Home;
