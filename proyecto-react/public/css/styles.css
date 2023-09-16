@@ -2,8 +2,8 @@ body{
     background-image: url(../img/Fondopagina\ -\ copia.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    text-shadow: 1px 3px 2px rgb(0 0 0 / 60%);
-    font-family: 'Bebas Neue';
+    font-family: 'consolas';
+    background-color: rgb(232, 223, 223);
 }
 header{
     background-color: #ffffff00;
@@ -17,11 +17,11 @@ header{
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    
+    color: rgb(33, 10, 83);
  }
    
  .PeliculasPopulares article{
-    color: white;
+    color: rgb(33, 10, 83);
     width:18%;
     text-align: center;
  }
@@ -145,7 +145,7 @@ footer{
     color: rgb(237, 225, 225);
 }
 .titulos {
-    color: white;
+    color: black;
 }
 
 /* Style.css de detalle pelicula  */
@@ -267,8 +267,10 @@ footer{
     display: none;
 }
 .futer{ 
-    color: white;
+    color: rgb(33, 10, 83);
     text-align: center;
+    font-family: 'arial';
+    font-weight: bold;
 }
 /*Search result*/
 .Titulo-search{
@@ -324,7 +326,7 @@ footer{
 font-size: 30px;
 }
 .d-pelicula{
-    color:#e9d7d7;
+    color: rgb(33, 10, 83);
     
 }
 .plataforma{
@@ -394,5 +396,6 @@ font-size: 30px;
     margin-left: 83px;
 }
 }
+
 
 
