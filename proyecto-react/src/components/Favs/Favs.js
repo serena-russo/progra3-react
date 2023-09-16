@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Card from "../Card/Card"
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 
 class Favs extends Component {
     constructor(props) {
@@ -12,39 +12,37 @@ class Favs extends Component {
 
     componentDidMount() {
         let arrayFavs = [];
-        let getStoragePelis = localStorage.getItem('favoritos')
-        if (getStoragePelis !== null) {
-            let toArray = JSON.parse(getStoragePelis);
-            arrayFavs = toArray
+        let recuperoStoragePelis= localStorage.getItem("favoritos");
+        if (recuperoStoragePelis !== null){
+            let favo = JSON.parse(recuperoStoragePelis);
+            arrayFavs=favo
+
         }
         
         arrayFavs.map((id) => {
-            let url = ``
+            let url = `https://api.themoviedb.org/3/movie/${id}?api_key=6de7dccd8404bc4ded28289d4913aa5f`
             fetch (url)
             .then(response => response.json())
                 .then(fav => {
-                    let listadoPelis = this.state.favs;
-                    listadoPelis.push(fav);
-                    this.setState({ favs: listadoPelis });
+                    let Pelisagregadas = this.state.favs;
+                    Pelisagregadas.push(fav);
+                    this.setState({ favs: Pelisagregadas });
                 })
                 .catch(error => console.log(error))
-            return true
-            console.log(arrayFavs)
         })
         }
 
         render() {
             return (
-                <React.Fragment>
-                    <h2 className="">Favoritos</h2>
-                    <section className="">
-                        <div className="">
-                            {this.state.favs.map(
-                                (movieFavorita, idx) => <Card key={movieFavorita + idx} datosPeli={movieFavorita} />
+                <div>
+                    <h2 className="titulos">Favoritos</h2>
+                  
+                        <section className="PeliculasPopulares">
+                            {this.state.favs.map((movieFavorita, idx) => <Card key={movieFavorita + idx} datosPeliculas={movieFavorita} />
                             )}
-                        </div>
-                    </section>
-                </React.Fragment>
+                        </section>
+                </div>
+             
             )
         }
     }

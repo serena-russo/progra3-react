@@ -62,10 +62,10 @@ class CardDetalle extends Component {
     render (){
         console.log(this.props)
         return(
-            <article>
-                <h2 >{this.props.datospeli.title}</h2>
-                <div>
-                    <img className="img-js" src={`https://image.tmdb.org/t/p/w342${this.props.datospeli.poster_path}`} alt="imagen" />
+            <article className="d-pelicula">
+                <h2 className="titulo">{this.props.datospeli.title}</h2>
+                <div >
+                    <img src={`https://image.tmdb.org/t/p/w342${this.props.datospeli.poster_path}`} alt="imagen" />
                 </div>
                 <button onClick = {()=> this.agregar_sacar(this.props.datospeli.id)} type="button">{this.state.textoBoton}</button>
                 <p>Calificación: {this.props.datospeli.vote_average} </p>

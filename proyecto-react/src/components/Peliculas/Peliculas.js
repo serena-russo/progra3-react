@@ -1,5 +1,6 @@
 import React, {Component} from "react"; 
 import Card from "../Card/Card"
+import {Link} from "react-router-dom"
 
 class Peliculas extends Component {
     constructor(props){
@@ -37,25 +38,25 @@ class Peliculas extends Component {
         return (
             <React.Fragment>
                 <div>
-                    <h1 className="titulos">Peliculas Trending</h1>
+                    <h1 className="titulos"><Link to="/PeliculasTrending">Peliculas Trending</Link></h1>
                     {this.state.peliculasTrending === null || this.state.peliculasTrending === "" ? (
                         <h3>Cargando...</h3>
                     ) : (
                         <section className="PeliculasPopulares">
                             {this.state.peliculasTrending.slice(0,5).map((todos) => (
-                                <Card key={todos.id} datosPeliculasTrend={todos} />
+                                <Card key={todos.id} datosPeliculas={todos} />
                             ))}
                         </section>
                     )}   
                 </div>
                 <div>
-                    <h1 className="titulos">Peliculas Now Playing</h1>
+                    <h1 className="titulos"><Link to="/PeliculasNow">Peliculas Now Playing</Link></h1>
                     {this.state.peliculasNow === null || this.state.peliculasNow === "" ? (
                         <h3>Cargando...</h3>
                     ) : (
                         <section className="PeliculasPopulares">
                             {this.state.peliculasNow.slice(0,5).map((todos) => (
-                                <Card key={todos.id} datosPeliculasTrend={todos} />
+                                <Card key={todos.id} datosPeliculas={todos} />
                             ))}
                         </section>
                     )}   

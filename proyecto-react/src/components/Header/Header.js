@@ -1,27 +1,28 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import "./Header.css";
+
 import Buscador from "../Buscador/Buscador";
 
 
 function Header (){
     return (
-        <React.Fragment>
+        <header>
             <section>
-                <img className="logo" src="/Img/Albert.jpg"/>
+                <img className="logo" src="/img/_logo nashe.gif" alt="logo"/>
                 <br/>
                 <article className="genero-titulo-div">
                     <Link to="/"> Home </Link>
                     <br/>
                     <Link to="/Favs"> Favoritos </Link>
                     <br/> 
-                    <Link to="/PeliculasTrending"> Trending </Link>
+                    <Link to="/PeliculasTrending"> Pelis Trending </Link>
                     <br/> 
-                    <Link to="/PeliculasNow"> Cartelera Hoy </Link>
+                    <Link to="/PeliculasNow"> Pelis Hoy </Link>
                     <Buscador/>
                 </article>
-            </section>     
-        </React.Fragment>    
+            </section>    
+        </header> 
+        
     );
 }
 

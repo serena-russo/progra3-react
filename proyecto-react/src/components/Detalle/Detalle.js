@@ -28,7 +28,7 @@ class Detalle extends Component{
             {this.state.datospeli === null || this.state.datospeli === "" ? (
                 <h3>Cargando...</h3>
             ) :(
-                <section>
+                <section className="Contenedorpadre">
                 <CardDetalle datospeli={this.state.datospeli} generos={this.state.generos}/>
                 </section>
             )}

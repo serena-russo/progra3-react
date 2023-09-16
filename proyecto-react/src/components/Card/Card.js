@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import "./Card.css"
 import {Link} from "react-router-dom";
 
 
@@ -8,7 +7,7 @@ class Card extends Component {
         super(props);
         this.state={
             textoBoton: "Agregar a favoritos",
-            text:props.datosPeliculasTrend.overview,
+            text:props.datosPeliculas.overview,
             show: false,
         }
     }
@@ -19,7 +18,7 @@ class Card extends Component {
         let favoritos = JSON.parse(recuperoStoragePelis);
 
         //si esta el id, necesito cambiar el texto del boton
-        if (favoritos.includes(this.props.datosPeliculasTrend.id)){
+        if (favoritos.includes(this.props.datosPeliculas.id)){
             this.setState({
                 textoBoton: "Quitar de favoritos"
             })
@@ -72,15 +71,15 @@ class Card extends Component {
         return(
             <article>
                 <div>
-                    <img className="img-js" src={`https://image.tmdb.org/t/p/w342${this.props.datosPeliculasTrend.poster_path}`} alt="imagen" />
+                    <img className="img-js" src={`https://image.tmdb.org/t/p/w342${this.props.datosPeliculas.poster_path}`} alt="imagen" />
                 </div>
-                <button onClick = {()=> this.agregar_sacar(this.props.datosPeliculasTrend.id)} type="button">{this.state.textoBoton}</button>
-                <h2 >{this.props.datosPeliculasTrend.title}</h2>
-                <p > Calificación: {this.props.datosPeliculasTrend.vote_average} </p>
+                <button onClick = {()=> this.agregar_sacar(this.props.datosPeliculas.id)} type="button">{this.state.textoBoton}</button>
+                <h2 >{this.props.datosPeliculas.title}</h2>
+                <p > Calificación: {this.props.datosPeliculas.vote_average} </p>
                 <p > {this.state.show?this.state.text:""}</p>
                 <button onClick={()=> this.mostrarmas_mostrarmenos()}>{this.state.show?"ver menos":"ver mas"}</button>
                 <br/>
-                <Link to={`/detalle/${this.props.datosPeliculasTrend.id}`}><button>Ir a detalle</button></Link>
+                <Link to={`/detalle/${this.props.datosPeliculas.id}`}><button>Ir a detalle</button></Link>
             </article>
         )
 

@@ -29,7 +29,7 @@ class Buscador extends Component {
             <div>
                 <form className= "busqueda" method="GET" onSubmit={(evento) => this.evitarSubmit(evento)}>
                     <input className="cuadro_buscar" type="text" name="Buscador" placeholder=" Iniciar busqueda" onChange={(e)=> this.guardarDatosInput(e)} value={this.setState.textoInputForm}/>
-                    <Link to = {`/search-results/${this.state.textoInputForm}`}><button className="" type="submit">Search</button></Link>
+                    <Link to = {`/resultado-busqueda/${this.state.textoInputForm}`}><button className="" type="submit">Search</button></Link>
                 </form>
             </div>
         )
