@@ -16,10 +16,10 @@ class Filtro extends Component{
 
     guardarDatosDelInput(eventoEnElInput){
         this.setState({
-            textoDelInput: eventoEnElInput.target.value
-        },()=> this.props.filtrado(this.state.textoDelInput))
+            textoDelInput: eventoEnElInput.target.value}, ()=> this.props.filtrado(this.state.textoDelInput))
         return true
     }
+    
     render(){
         return(
             <div>

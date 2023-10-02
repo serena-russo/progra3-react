@@ -36,7 +36,6 @@ class CardDetalle extends Component {
         if (favoritos.includes(id)){
             favoritos = favoritos.filter (unId => unId !== id)
         
-        
         //Mostrarle un cambio al usuario en pantalla
         this.setState({
             textoBoton: "Agregar a favoritos"
@@ -63,20 +62,20 @@ class CardDetalle extends Component {
         console.log(this.props)
         return(
             <article className="d-pelicula">
+
                 <h2 className="titulo">{this.props.datospeli.title}</h2>
                 <div >
-                    <img src={`https://image.tmdb.org/t/p/w342${this.props.datospeli.poster_path}`} alt="imagen" />
+                    <img src={`https://image.tmdb.org/t/p/w342${this.props.datospeli.poster_path}`} alt="imagen"/>
                 </div>
-                <button onClick = {()=> this.agregar_sacar(this.props.datospeli.id)} type="button">{this.state.textoBoton}</button>
-                <p>Calificación: {this.props.datospeli.vote_average} </p>
-                <p>Fecha estreno: {this.props.datospeli.release_date}</p>
-                <p>Duracion: {this.props.datospeli.runtime}</p>
-                <p>Sinopsis: {this.props.datospeli.overview}</p>
-                <p>Generos: {this.props.generos.join(" ")}</p>
-                
+                <button onClick= {()=> this.agregar_sacar(this.props.datospeli.id)} type="button">{this.state.textoBoton}</button>
+                <p>Calificación:{this.props.datospeli.vote_average} </p>
+                <p>Fecha estreno:{this.props.datospeli.release_date}</p>
+                <p>Duracion:{this.props.datospeli.runtime}</p>
+                <p>Sinopsis:{this.props.datospeli.overview}</p>
+                <p>Generos:{this.props.generos.join(" ")}</p>
+            
             </article>
         )
-
     }  }
 
 export default CardDetalle; 

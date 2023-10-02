@@ -22,6 +22,7 @@ class PeliculasTrending extends Component {
             })  )
         .catch( error => console.log(error))
     }
+
     filtrarPeliculas(textoAFiltrar){
         let peliculasFiltradas= this.state.PeliculasTrending.filter(function(unaPelicula){
             return unaPelicula.title.includes(textoAFiltrar)
@@ -30,6 +31,7 @@ class PeliculasTrending extends Component {
             PeliculasTrending: peliculasFiltradas
         })
     }
+    
     mostrarMas(){
         let url2= 'https://api.themoviedb.org/3/movie/popular?api_key=6de7dccd8404bc4ded28289d4913aa5f&page=+${this.state.page}'
         fetch(url2)
@@ -63,4 +65,5 @@ class PeliculasTrending extends Component {
     } // El if ternario ahi esta chequiando q peliculasTrending este nul Y vacio, para desp mostrar Card
       // (busca q ambas condiciones se cumplan para poder ejecutar lo que viene desp) 
 }
+
 export default PeliculasTrending;

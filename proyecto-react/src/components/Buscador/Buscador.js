@@ -32,7 +32,7 @@ class Buscador extends Component {
                     <Link to = {`/resultado-busqueda/${this.state.textoInputForm}`}><button className="" type="submit">Search</button></Link>
                 </form>
             </div>
-        )
+        ) //
     }
 
 }

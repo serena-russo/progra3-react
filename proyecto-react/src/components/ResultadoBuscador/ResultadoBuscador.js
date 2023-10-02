@@ -10,6 +10,7 @@ class ResultadoBuscador extends Component{
         }
 
     }
+    
     componentDidMount(){
         //buscamos datos
         let url = `https://api.themoviedb.org/3/search/movie?api_key=6de7dccd8404bc4ded28289d4913aa5f&language=en-US&query=${this.props.match.params.buscado}&page=1&include_adult=false)`

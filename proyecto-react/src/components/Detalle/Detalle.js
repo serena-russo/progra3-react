@@ -10,6 +10,7 @@ class Detalle extends Component{
             generos:[],
         }
     }
+    
     componentDidMount(){
         let url = `https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=6de7dccd8404bc4ded28289d4913aa5f`
 

@@ -20,6 +20,7 @@ class PeliculasNow extends Component {
             })  )
         .catch( error => console.log(error))
     }
+
     filtrarPeliculas(textoAFiltrar){
         let peliculasFiltradas= this.state.PeliculasTrending.filter(function(unaPelicula){
             return unaPelicula.title.includes(textoAFiltrar)
@@ -28,6 +29,7 @@ class PeliculasNow extends Component {
             PeliculasTrending: peliculasFiltradas
         })
     }
+
     mostrarMas(){
         let url2= 'https://api.themoviedb.org/3/movie/popular?api_key=6de7dccd8404bc4ded28289d4913aa5f&page=+${this.state.page}'
         fetch(url2)
@@ -38,7 +40,6 @@ class PeliculasNow extends Component {
             })  )
         .catch( error => console.log(error))
     }
-
 
     render() {
         console.log(this.state);
